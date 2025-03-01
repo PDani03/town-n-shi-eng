@@ -222,7 +222,7 @@ while True:
                     df+=0.4
                     money=round(money-df_cost,1)
                     df_cost=round(df_cost*1.4,1)
-                    print("Páncél upgraded! Current defense:",df, end="")
+                    print("Armor upgraded! Current defense:",df, end="")
                     input()
                     print()
                 else:
@@ -234,11 +234,11 @@ while True:
                 if van_itemed():
                     print_items()
                     
-                    eladni=input("Which one?(press enter if none of them)")
+                    eladni=input("Which one?(press enter if none of them) ")
                     if eladni!="":
                         eladni= int(eladni)-1
 
-                        print(f"\Are you sure you want to sell your {item_prefix[eladni]} { types[ item_type[ eladni]]} for {money_from_item_sale(item_value[eladni])} gold?", end=" ")
+                        print(f"Are you sure you want to sell your {item_prefix[eladni]} { types[ item_type[ eladni]]} for {money_from_item_sale(item_value[eladni])} gold?", end=" ")
                         if input("(y/n) ")=="y":
                             money+=round( money_from_item_sale(item_value[eladni]) ,1)
                             item_delete(eladni)
@@ -297,7 +297,7 @@ while True:
                     else:
                         most_enemy.append("goblin")
 
-            most_enemy.append("Elmenekülés")
+            most_enemy.append("Escpae")
                         
 
             while len(most_enemy)>1:
@@ -338,7 +338,7 @@ while True:
                     most_df=df #csak azért kell ide is hogy rendesen lehessen védekezni
 
                     print("----"+most_enemy[harcolni],"fight----")
-                    print(most_enemy[harcolni],"'s health:",round(enemy_hp,1))
+                    print(most_enemy[harcolni]+"'s health:",round(enemy_hp,1))
                     print("your health:",round(hp,1))
                     print()
                     print("1. Attack")
@@ -365,7 +365,7 @@ while True:
                             if rand(3)!=3:
                                 print("You killed the enemy.", end="")
                             else:
-                                print("You killed the enemy, and you saw an item on the floor!", end="")
+                                print("You killed the enemy, and noticed an item on the floor!", end="")
                                 input()
                                 print("You got a ", end="")
 
@@ -399,7 +399,7 @@ while True:
                         sebzodes=0
                     hp=hp-sebzodes
 
-                    print("The",most_enemy[harcolni]+"hit you, and you suffered",round(sebzodes,1),"damage!", end="")
+                    print("The",most_enemy[harcolni],"hit you, and you suffered",round(sebzodes,1),"damage!", end="")
                     input()
                     print()
 
